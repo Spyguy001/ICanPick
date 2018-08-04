@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ICanPick</string>
+    <string name="distance"></string>
 </resources>
