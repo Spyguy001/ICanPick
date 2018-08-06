@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         //This displays the current tags
         textViewTags = findViewById(R.id.textViewTags);
 
-        //TextView tv1 = (TextView)findViewById(R.id.text);
+        /*//TextView tv1 = (TextView)findViewById(R.id.text);
         //tv1.setText("Hey");
 
         // Construct a GeoDataClient.
@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
                     Log.e(TAG, "Place not found.");
                 }
             }
-        });
+        });*/
     }
 
 
