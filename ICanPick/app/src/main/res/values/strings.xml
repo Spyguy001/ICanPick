@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">ICanPick</string>
     <string name="distance"></string>
+    <string name="pickButton">Pick a Restaurant!</string>
+    <string name="currentTags">Current Tags:</string>
+    <string name="back">Go Back</string>
+    <string name="reroll">Try Again</string>
+    <string name="select">Choose This!</string>
 </resources>
