@@ -29,10 +29,10 @@ public class MainActivity extends AppCompatActivity {
         //tv1.setText("Hey");
 
         // Construct a GeoDataClient.
-        mGeoDataClient = Places.getGeoDataClient(this, null);
+        mGeoDataClient = Places.getGeoDataClient(this);
 
         // Construct a PlaceDetectionClient.
-        mPlaceDetectionClient = Places.getPlaceDetectionClient(this, null);
+        mPlaceDetectionClient = Places.getPlaceDetectionClient(this);
         String placeId = "ChIJv1rQpeoVK4gRd4bDfGYxLTU";
         mGeoDataClient.getPlaceById(placeId).addOnCompleteListener(new OnCompleteListener<PlaceBufferResponse>() {
             @Override
