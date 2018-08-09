@@ -58,31 +58,6 @@ public class MainActivity extends AppCompatActivity {
 
         //This displays the current tags
         textViewTags = findViewById(R.id.textViewTags);
-
-        /*//TextView tv1 = (TextView)findViewById(R.id.text);
-        //tv1.setText("Hey");
-
-        // Construct a GeoDataClient.
-        mGeoDataClient = Places.getGeoDataClient(this);
-
-        // Construct a PlaceDetectionClient.
-        mPlaceDetectionClient = Places.getPlaceDetectionClient(this);
-        String placeId = "ChIJv1rQpeoVK4gRd4bDfGYxLTU";
-        mGeoDataClient.getPlaceById(placeId).addOnCompleteListener(new OnCompleteListener<PlaceBufferResponse>() {
-            @Override
-            public void onComplete(@NonNull Task<PlaceBufferResponse> task) {
-                if (task.isSuccessful()) {
-                    PlaceBufferResponse places = task.getResult();
-                    Place myPlace = places.get(0);
-                    Log.i(TAG, "Place found: " + myPlace.getName());
-                    TextView tv1 = (TextView)findViewById(R.id.text);
-                    tv1.setText(myPlace.getName());
-                    places.release();
-                } else {
-                    Log.e(TAG, "Place not found.");
-                }
-            }
-        });*/
     }
 
 

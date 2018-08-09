@@ -19,10 +19,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RestaurantActivity"></activity>
+        <activity android:name=".RestaurantActivity">
+
+        </activity>
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version"/>
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyC-6EQUq3Xq30B1utN1lH1hXh48oq3l4bY"/>
+
     </application>
 
 </manifest>
