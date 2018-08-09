@@ -111,19 +111,17 @@ public class RestaurantActivity extends AppCompatActivity {
             int permissionCheck = ContextCompat.checkSelfPermission(this,
                     Manifest.permission.ACCESS_FINE_LOCATION);
             if(permissionCheck == PackageManager.PERMISSION_GRANTED) {
-                Task<Location> locationResult = fusedLocationProviderClient.getLastLocation();
-                locationResult.addOnCompleteListener(this, new OnCompleteListener<Location>() {
+                Task<PlaceLikelihoodBufferResponse> placeResult = placeDetectionClient.getCurrentPlace(null);
+                placeResult.addOnCompleteListener(new OnCompleteListener<PlaceLikelihoodBufferResponse>() {
                     @Override
-                    public void onComplete(@NonNull Task<Location> task) {
-                        if (task.isSuccessful() && task.getResult() != null) {
-                            Location curLoc;
-                            curLoc = task.getResult();
-                            // Set the map's camera position to the current location of the device.
-                            Log.i(TAG, "found a location " + curLoc.getLatitude() + " " + curLoc.getLongitude());
-                        } else {
-                            Log.d(TAG, "Current location is null. Using defaults.");
-                            Log.e(TAG, "Exception: %s", task.getException());
+                    public void onComplete(@NonNull Task<PlaceLikelihoodBufferResponse> task) {
+                        PlaceLikelihoodBufferResponse likelyPlaces = task.getResult();
+                        for (PlaceLikelihood placeLikelihood : likelyPlaces) {
+                            Log.i(TAG, String.format("Place '%s' has likelihood: %g",
+                                    placeLikelihood.getPlace().getName(),
+                                    placeLikelihood.getLikelihood()));
                         }
+                        likelyPlaces.release();
                     }
                 });
             }
